@@ -15,6 +15,7 @@ class GroupsController < ApplicationController
   def show
     @group = Group.find(params[:id])
     @book = Book.new
+    @user = User.find(current_user.id)
   end
 
   def create
@@ -28,7 +29,7 @@ class GroupsController < ApplicationController
   end
 
   def edit
-    
+
   end
 
   def update
