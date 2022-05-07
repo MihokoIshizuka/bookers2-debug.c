@@ -5,4 +5,8 @@ class Group < ApplicationRecord
   validates :name, presence: true
   validates :introduction, presence: true
   has_one_attached :image, dependent: :destroy
+
+def get_image
+    (image.attached?) ? image : 'no_image.jpg'
+end
 end
